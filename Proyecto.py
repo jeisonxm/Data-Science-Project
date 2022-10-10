@@ -258,7 +258,7 @@ def createApproved(df):
         m4 = df['G3'] > 15
         
         df['approved'] = np.select([m1 | m2, m4| m3], [0,1], default=None)
-        df['extra']=np.select([m4 & ~m1,m3 & ~m1],[1,0],default=df['extra'])
+        df['extra']=np.select([m4 & ~m1,m3 & ~m1],[0,1],default=df['extra'])
         return df
 
 createApproved(GabrielPereira_mat)
